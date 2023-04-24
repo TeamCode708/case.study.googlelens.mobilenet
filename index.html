@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <title>google lens VS mobilenet model - case study</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="style.css"></link>
+    </head>
+    <body>
+        <center>
+            <!--header-->
+            <div class="btn header">
+                <h1>google lens vs mobilenet model</h1>
+                <h2>case study of google lens & mobilenet model</h2>
+            </div>
+            <!--bg img holder-->
+            <div id="bg_holder">
+                <img src="pngtree-biometrics-technology-isometric-illustration-concept-png-image_1567942-removebg-preview.png">
+            </div>
+            <!--dd for result BOTTLE-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#bottle">
+                <span>
+                    <img src="bottle.jpg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Water Bottle
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="bottle" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="bottle.jpg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Glass Bottle</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Water Bottle</span>
+                    <h4>Conclusion - Both Google lens & MobileNet identified the object correctly.</h4>
+                </div>
+            </div>
+            <!--dd for result MARKER/PEN-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#marker">
+                <span>
+                    <img src="marker.jpg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Marker/Pen
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="marker" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="marker.jpg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Whiteboard Marker</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Pen</span>
+                    <h4>Conclusion - Google Lens is more accurate.</h4>
+                </div>
+            </div>
+            <!--dd for result BOOK-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#book">
+                <span>
+                    <img src="book.jpg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Book
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="book" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="book.jpg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Be Careful What You Wish For - Novel by Jeffrey Archer</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Lighter</span>
+                    <h4>Conclusion - Google Lens recognized the object correctly.</h4>
+                </div>
+            </div>
+            <!--dd for result SCISSOR-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#scissor">
+                <span>
+                    <img src="scissor.jpg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Scissor
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="scissor" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="scissor.jpg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Stainless steel scissor</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Pair of scissors</span>
+                    <h4>Conclusion - Google Lens is more accurate.</h4>
+                </div>
+            </div>
+            <!--dd for result KEY-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#key">
+                <span>
+                    <img src="keys.jpg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Keys
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="key" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="keys.jpg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Two keys</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Pair of keys</span>
+                    <h4>Conclusion - Both Google lens & MobileNet identified the object correctly.</h4>
+                </div>
+            </div>
+            <!--dd for result MOBILE PHONE-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#mobilez">
+                <span>
+                    <img src="mobile phone.jpeg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Mobile
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="mobilez" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="mobile phone.jpeg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Samsung Galaxy J2 (2016)</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Cellphone</span>
+                    <h4>Conclusion - Google Lens is more accurate.</h4>
+                </div>
+            </div>
+            <!--dd for result CLOCK-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#clock">
+                <span>
+                    <img src="clock.jpeg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Clock
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="clock" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="clock.jpeg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - </h5>
+                    <span class="result_lbl">Oreva plastic glass wall clock</span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Analog clock</span>
+                    <h4>Conclusion - Google Lens is more accurate.</h4>
+                </div>
+            </div>
+            <!--dd for result COMB-->
+            <div class="visible_dd" data-toggle="collapse" data-target="#comb">
+                <span>
+                    <img src="comb.jpeg" style="width: 75px; height: 75px; float: left; border-radius: 5px;">
+                    Comb
+                    <i class="fa fa-sort-desc"></i>
+                </span>
+            </div>
+            <div id="comb" class="collapse">
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 result">
+                    <img src="comb.jpeg" class="img-responsive img-thumbnail img">
+                    <h5>Output on <b>Google Lens</b> - Grooming comb</h5>
+                    <span class="result_lbl"></span>
+                    <h5>Output on <b>MobileNet</b> - </h5>
+                    <span class="result_lbl">Comb</span>
+                    <h4>Conclusion - Both Google lens & MobileNet identified the object correctly.</h4>
+                </div>
+            </div>
+            <!--final result-->
+            <div id="final_result">
+                <h3>Final Result</h3>
+                <p>From the above outputs of both Google Lens & MobileNet, it concludes that Google Lens is the best classification model.
+                We tested eight objects and Google Lens was able to guess all of them correctly while MobileNet only guessed 3 of them
+                correct.</p>
+            </div>
+        </center>
+    </body>
+</html>
